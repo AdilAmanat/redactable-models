@@ -24,17 +24,17 @@ class RedactCommand extends Command
     {
         if (env(REDACT_ENABLED)) {
             $models = $this->redactableModels();
-    
+
             if ($models->isEmpty()) {
                 $this->components->info('No redactable model classes were found.');
-    
+
                 return static::SUCCESS;
             }
-    
+
             foreach ($models as $model) {
                 $this->redactModel($model);
             }
-    
+
             return static::SUCCESS;
         }else{
             return static::FAIL;

@@ -36,7 +36,7 @@ class RedactCommand extends Command
             }
 
             return static::SUCCESS;
-        }else {
+        } else {
             return static::FAIL;
             $this->components->info('REFACT is not enabled on this environment.');
         }
